@@ -1,0 +1,22 @@
+{
+  "name": "epack-number-picker",
+  "version": "0.0.1",
+  "homepage": "https://github.com/ePack/number-picker",
+  "authors": [
+    "Maik Hummel <maik@eclip.io>"
+  ],
+  "description": "",
+  "main": "epack-number-picker.html",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "paper-slider": "polymerElements/paper-slider#~1.0.9"
+  }
+}

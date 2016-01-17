@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+  <title>ePack: Number Picker</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+
+  <link rel="import" href="../epack-number-picker.html">
+</head>
+<body>
+
+  <epack-number-picker></epack-number-picker>
+
+  <script>
+    var enp = document.querySelector('epack-number-picker');
+    addEventListener('WebComponentsReady', function () {
+      enp.max = 100;
+      enp.min = 20;
+      enp.step = 2;
+      enp.value = 42;
+    });
+  </script>
+
+</body>
+</html>

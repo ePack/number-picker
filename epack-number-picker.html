@@ -1,0 +1,66 @@
+<link rel="import" href="../../paper-slider/paper-slider.html">
+
+<dom-module id="epack-number-picker">
+<template>
+
+  <style is="custom-style">
+    paper-slider {
+      width: 100%;
+    }
+    h1 {
+      @apply(--paper-font-display4);
+      margin: 0;
+      text-align: center;
+    }
+  </style>
+
+  <h1>{{value}}</h1>
+  <paper-slider id="slider" min="{{min}}" max="{{max}}" step="{{step}}"></paper-slider>
+
+</template>
+<script>
+
+  Polymer({
+    is: 'epack-number-picker',
+
+    properties: {
+      min: {
+        type: Number,
+        value: 0
+      },
+      max: {
+        type: Number,
+        value: 10
+      },
+      step: {
+        type: Number,
+        value: 1
+      },
+      value: {
+        type: Number,
+        value: 1,
+        observer: '_valueChanged'
+      }
+    },
+
+    _valueChanged: function () {
+      this.$.slider.value = this.value;
+    },
+
+    attached: function () {
+      var self = this;
+      var slider = this.$.slider;
+
+      slider.value = this.value;
+
+      var updateValue = function () {
+        self.set('value', slider.immediateValue);
+      };
+
+      slider.addEventListener('immediate-value-change', updateValue);
+      slider.addEventListener('value-change', updateValue);
+    }
+  });
+
+</script>
+</dom-module>
